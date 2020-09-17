@@ -70,7 +70,7 @@
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        fetch('http://ngauge.me/api/v1/tickets', {
+        fetch('http://ngauge.ml/api/v1/tickets', {
           method: 'POST', // or 'PUT'
           headers: {
             'Content-Type': 'application/json',

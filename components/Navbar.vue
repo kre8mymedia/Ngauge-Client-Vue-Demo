@@ -57,7 +57,7 @@ export default {
   methods: {
     async getAuthUser() {
       if(this.email && this.password) {
-        fetch('http://ngauge.me/api/v1/user/login', {
+        fetch('http://ngauge.ml/api/v1/user/login', {
           method: 'POST', // or 'PUT'
           headers: {
             'Content-Type': 'application/json',
