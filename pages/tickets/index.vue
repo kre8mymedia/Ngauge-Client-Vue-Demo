@@ -56,7 +56,7 @@
     },
     methods: {
       async getTickets() {
-        fetch('http://ngauge.ml/api/v1/tickets')
+        fetch('https://ngauge.ml/api/v1/tickets')
         .then(res => res.json())
         .then(data => {
           // console.log(data)
