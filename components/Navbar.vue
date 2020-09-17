@@ -42,8 +42,8 @@ export default {
     return {
       auth_user: {},
       access_token: '',
-      email: 'john@test.com',
-      password: 'test1234',
+      email: '',
+      password: '',
       company_id: ''
     }
   },
