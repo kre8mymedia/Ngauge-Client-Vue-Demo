@@ -1,6 +1,10 @@
 
 export default {
   mode: 'universal',
+  env: {
+    devUrl: process.env.DEV_URL || "ngauge.me",
+    stagingUrl: process.env.STAGING_URL || "ngauge.ml"
+  },
   /*
   ** Headers of the page
   */

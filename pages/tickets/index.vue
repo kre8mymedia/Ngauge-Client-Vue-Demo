@@ -56,7 +56,7 @@
     },
     methods: {
       async getTickets() {
-        fetch(`https://${process.env.STAGING_URL}/api/v1/tickets`)
+        fetch(`https://${process.env.stagingUrl}/api/v1/tickets`)
         .then(res => res.json())
         .then(data => {
           // console.log(data)

@@ -70,7 +70,7 @@
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        fetch(`https://${process.env.STAGING_URL}/api/v1/tickets`, {
+        fetch(`https://${process.env.stagingUrl}/api/v1/tickets`, {
           method: 'POST', // or 'PUT'
           headers: {
             'Content-Type': 'application/json',
