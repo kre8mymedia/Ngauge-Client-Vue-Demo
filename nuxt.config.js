@@ -3,7 +3,8 @@ export default {
   mode: 'universal',
   env: {
     devUrl: process.env.DEV_URL || "ngauge.me",
-    stagingUrl: process.env.STAGING_URL || "ngauge.ml"
+    stagingUrl: process.env.STAGING_URL || "ngauge.ml",
+    access_token: process.env.ACCESS_TOKEN || "access_dummy"
   },
   /*
   ** Headers of the page
