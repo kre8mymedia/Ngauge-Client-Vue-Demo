@@ -24,14 +24,60 @@
             <template v-slot:button-content>
               <em>User</em>
             </template>
-            <div>
+            <div v-if="access_token != '' && typeof access_token != 'undefined'">
               <b-dropdown-item href="/profile">Profile</b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </div>
-            <!-- <b-dropdown-item href="/auth/login">Sign In</b-dropdown-item> -->
+            <b-dropdown-item v-else href="/auth/login">Sign In</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      auth_user: {},
+      access_token: '',
+      email: '',
+      password: '',
+      company_id: ''
+    }
+  },
+  created() {
+    this.getAuthUser();
+  },
+  watch: {
+  // call again the method if the route changes
+  '$route': 'getAuthUser'
+  },
+  methods: {
+    async getAuthUser() {
+      if(this.email && this.password) {
+        const queryUrl = `https://${process.env.stagingUrl}/api/v1/user/login`;
+        console.log(queryUrl)
+        fetch(queryUrl, {
+          method: 'POST', // or 'PUT'
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: this.email, password: this.password }),
+        })
+        .then(res => res.json())
+        .then(data => {
+          this.auth_user = data.user;
+          this.access_token = data.access_token;
+          this.company_id = data.user.company_id;
+          // console.log(data)
+        })
+        .catch(err => console.log(err))
+      } else {
+        console.log("Please enter email and password")
+      }
+    }
+  }
+}
+</script>

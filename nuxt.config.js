@@ -1,10 +1,12 @@
 
 export default {
   mode: 'universal',
+  serverMiddleware: ["~/api/index.js"],
   env: {
     devUrl: process.env.DEV_URL || "ngauge.me",
     stagingUrl: process.env.STAGING_URL || "ngauge.ml",
-    access_token: process.env.ACCESS_TOKEN || "access_dummy"
+    stagingToken: process.env.STAGING_TOKEN || "stagingToken",
+    devToken: process.env.DEV_TOKEN || "devToken"
   },
   /*
   ** Headers of the page

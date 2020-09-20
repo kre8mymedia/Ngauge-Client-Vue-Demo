@@ -3,9 +3,7 @@
     <navbar-component></navbar-component>
 
     <h3 class="m-4">Tickets</h3>
-
     <hr>
-
     <div class="container-fluid mt-4">
       
       <div class="container">
@@ -51,12 +49,12 @@
       this.getTickets();
     },
     watch: {
-    // call again the method if the route changes
-    '$route': 'getTickets'
+      // call again the method if the route changes
+      '$route': 'getTickets'
     },
     methods: {
       async getTickets() {
-        fetch(`https://${process.env.stagingUrl}/api/v1/tickets`)
+        fetch(`${process.env.BASE_URL}/api/tickets`)
         .then(res => res.json())
         .then(data => {
           // console.log(data)
