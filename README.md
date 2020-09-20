@@ -1,6 +1,6 @@
 # adaptech
 
-> My super-duper Nuxt.js project
+> My Demo Nuxt app for Ngauge.ml
 
 ## Build Setup
 
