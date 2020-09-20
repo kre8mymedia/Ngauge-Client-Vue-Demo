@@ -1,4 +1,4 @@
-# adaptech
+# Adaptech.ml Client Ngauge.ml DEMO
 
 > My Demo Nuxt app for Ngauge.ml
 
